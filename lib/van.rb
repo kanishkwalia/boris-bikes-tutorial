@@ -10,8 +10,16 @@ class Van
 		@bikes = []
 	end
 
-	def load bike
+	def accept bike
+		fail "Van full" if full?
 		bikes << bike
 	end
 
+	def release bike
+		bikes.delete bike
+	end
+
+	def full?
+		bikes.length >= 10
+	end
 end
