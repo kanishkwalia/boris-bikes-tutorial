@@ -7,7 +7,7 @@ class DockingStation
 		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
 		@bikes = []
 	end
-
+  
 	def capacity
 		@capacity
 	end
