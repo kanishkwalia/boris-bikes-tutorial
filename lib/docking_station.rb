@@ -14,8 +14,7 @@ class DockingStation
 
 	def dock bike
 	  fail "Station Full" if full?
-	  bikes << bike
-	  nil
+	  @bikes << bike
 	end
 
 	def release_bike
@@ -28,7 +27,7 @@ class DockingStation
 	end
 
 	def empty?
-		bikes.reject(&:broken?).length == 0
+		bikes.reject(&:broken?).empty?
 	end
 
-end
+end 
