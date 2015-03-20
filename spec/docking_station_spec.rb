@@ -7,7 +7,11 @@ describe DockingStation do
 		expect(bike).not_to be_broken
 	end
 	it 'can dock a bike' do
-		expect(subject.dock :bike).to be nil
+		bike = :bike
+		docking_station = DockingStation.new
+		docking_station.dock bike
+		#try to get rid of first
+		expect(docking_station.bikes.first).to be bike
 	end
 	it 'raises an error when full' do
 		20.times { subject.dock double :bike }
